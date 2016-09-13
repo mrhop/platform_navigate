@@ -1,0 +1,109 @@
+https://github.com/akveo/blur-admin
+
+//next do multi-module
+//multi module,包含 include 重用的部分 header，left
+//content 部分作为
+//css scss的js module整合
+//vendor and app and webpack
+//also
+//keep on doing another html.finally state data
+
+//各种插件尽可能的使用react的
+
+//开始到了content部分，参照dashboard部分
+
+//special layout/panel/modal can shall be added when needed
+//now panel task
+then
+modal/tab/table
+//panel modal toast finished
+!tab + table need to do now
+
+tab finished
+now tables
+//考虑modal的创建以及生命周期介绍--done key的关键使用
+
+tables 的各种样式以及td的左右以及链接，比如email,and also smart tables
+//继续table的数据融入,数据ok，继续其他样式的table
+//table 的列过滤设置[DONE]
+[样例数据在webpack中的放置,CopyWebpackPlugin[done]]
+//table 的自动同步数据设置[now 就是前后台的数据处理的同步性，使用样例数据作为数据标本],------>
+//以及条件的触发,save cancel delete edit按钮的触发
+//过滤+分页 shall be here
+server 排序，but each time get first 5 page records and save at client but give the total records number，（the biggest pagers）
+then when sort and filter update the data, delete ,when  the last page is 饱满的，do nothing, refresh base on the first total records number,and the total records number can be changed each refresh
+use this concept，server 排序
+return currentTbody and first 5 page data,when go to the 3 pages ,asychronized the next 6 7 page data, if exists, which shall be good to see and feel
+1,2,3,4,5......
+...2,3,4,5,6
+...3,4,5,6,7...
+
+分页样式问题,分页过多时的持续增加，自适应页面时的处理
+filter部分和add部分共用一套代码，根据thead的type进行type的处理，最好可以和tbody edit部分的一起实现,utilFun 实现form元素的统一实现
+now add item,to the top line, then save, cancel button --->add finished
+save finished
+
+table finished-------------------> 存在性能问题 done
+now panel-->dom-->children
+
+
+now  redux study,then
+try it,then forms and chart
+
+
+//然后是reactjs的mvvm的处理模型
+//then forms 以及图表的处理
+
+
+
+//THEN forms and basic functions like mail,online talking and others,then cms/crm basic creation
+//add a click event when the screen is small and the left banner is show,then hide the left banner,需要消息推送机制（message），notification采用流程触发机制，在线交流im的话考虑云信
+mail另行考虑，mail涉及的操作太多
+
+学习一下java的流程化规范，任务链以及机制，如果要规范，就要从开始定义完备 state mechanism spring web flow
+
+
+
+
+
+遗留问题---》
+form表单元素的格式错误验证功能遗留
+need to see the table ,and finish it, also care about the react,see the doc to make everything easier!!!!!!
+middleware 的部分实现 公共化查询部分，另外公共化以及标准化return type的json,like {result:[],status:true,errorMessage:''}--done no need additional result success 画蛇添足，but error need,or use http error code
+
+now,table add, update and colum update need to be finished  done
+now chart, then form~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!!!!
+
+
+now the dashBoard click shall all in one page,but how asychnorize the other link js when click and refresh the MainBlock in react??????
+use redux, something need to change dashboard things
+rebuild the dashboard basic
+
+use https://github.com/yang-wei/rd3 as a choice,now the color need to be change, do it
+and also read the d3 doc
+https://github.com/d3/d3 c3
+
+still need the native choice
+then the form,then draggable little panel,then the big modal,like oauth2 and work process,and sns,notifications basic business
+tomorow form and draggable little panel
+
+
+开始进行form的无样式的流程通路处理,form的初始化状态问题
+https://github.com/akveo/blur-admin 样式参考
+
+left 部分根据history并设置相应的样式
+
+now form 其他基本元素的样式以及处理(然后select，然后file，还有一个textarea,整个完事后考虑datetime)
+file 只处理name，内容部分 form submit处理
+    //此处需要处理json和http formData 的区分，因为有file的处理，目前只考虑单file，也可以考虑多file部分，根据name，and id来结合处理，参照middleware/index.js
+   多文件的考虑，但是暂时不考虑多name的其他属性，因为可以试用radio和checkbox！！---------------------------------------
+   参照 http://stackoverflow.com/questions/35192841/fetch-post-with-multipart-form-data
+   以及http://blog.teamtreehouse.com/uploading-files-ajax
+now draggable~~~!!!需要进行设计
+then map
+
+drag 部分需要考虑组织结构部分的实现，主要是塔状，顶层只允许一个，然后拖拽时，考虑position 可以拖拽至position，关联parent child时，考虑类似action的，一个下属只能有一个上级！！
+
+以后考虑需要将table checkbox中的,分割改为数组，另外需要将action等内置在common table组件中！！！！！！！！！！！！！！
+
+map 暂时不考虑，开始后端登陆，用户模块等的实现 以及rbac部分的实现，结合oauth2以及组织结构，然后加入工作流，然后是cms的实现，然后是oa的文件管理【采用svn版本形式前后端的结合处理】部分实现，然后库存，进货，销售，存储的处理，然後考虑简单商城的处理

@@ -1,0 +1,24 @@
+@import "../../bower_components/compass-sass-mixins/lib/compass/support";
+@import "../../bower_components/compass-sass-mixins/lib/compass/css3";
+@import "../../bower_components/compass-sass-mixins/lib/animation/core";
+
+$brand-primary: darken(#0ca1fa, 5%) !default;
+// #337ab7
+$input-color: #fff !default;
+$input-color-placeholder: #fff !default;
+$input-bg: rgba(0, 0, 0, .4) !default;
+$border-radius-base: 5px !default;
+$link-hover-color: darken($brand-primary, 6.5%) !default;
+$font-family-base: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$icon-font-path: "../assets/fonts/bootstrap/" !default;
+$link-hover-decoration: none !default;
+$screen-min-width: 320px;
+
+$scroll-bar-width: 4px;
+$scroll-bar-height: $scroll-bar-width;
+$grid-gutter-width: 20px !default;
+
+$select-input-height:              34px !default;
+
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";

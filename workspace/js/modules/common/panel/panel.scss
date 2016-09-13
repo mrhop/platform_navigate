@@ -1,0 +1,38 @@
+@import "../../../../scss/import";
+
+.panel {
+ // background-size: cover;
+  background: url(../../../../assets/images/bg-panel.jpg) scroll ;
+  background-size: 1920px 1080px;
+  background-position: 0px 0px;
+  @include animation(zoomIn 0.5s);
+  @include animation-fill-mode(none);
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .25);
+  margin-bottom: 20px;
+}
+
+.panel>.panel-body{
+  padding: 15px 22px;
+  height: 100%;
+}
+
+.panel>.panel-heading {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  height: 44px;
+  font-size: 16px;
+  padding: 14px 22px;
+  @include clearfix;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,.12);
+}
+
+.panel-title {
+  font-weight: 400;
+  opacity: .9;
+  //text-transform: uppercase;
+  font-size: 16px;
+}

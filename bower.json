@@ -1,0 +1,19 @@
+{
+  "name": "platform_navigate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mrhop/platform_navigate",
+  "authors": [
+    "mrhop <233402923@qq.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "compass-sass-mixins": "*"
+  }
+}

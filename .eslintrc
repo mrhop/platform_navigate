@@ -1,0 +1,24 @@
+{
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread":true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "camelcase": 2,
+    "curly": 2,
+    "brace-style": [2, "1tbs"],
+    //"quotes": [2, "single"]
+    //"semi": [2, "always"],
+    "space-infix-ops": 2
+  }
+}

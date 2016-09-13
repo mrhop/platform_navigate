@@ -1,0 +1,27 @@
+@import "../../../../scss/import";
+.index-block {
+  width: 800px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  padding: 32px;
+}
+
+.panel > .panel-body {
+  button{
+    display: block;
+    margin: 0 auto;
+    span.right{
+      &:after{
+        margin-left: 5px;
+        content: "\e912";
+        font-family: "Icomoon Icon";
+      }
+    }
+  }
+  h4{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
