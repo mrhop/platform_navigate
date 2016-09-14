@@ -9,14 +9,17 @@
 }
 
 .panel > .panel-body {
-  button{
-    display: block;
-    margin: 0 auto;
-    span.right{
-      &:after{
-        margin-left: 5px;
-        content: "\e912";
-        font-family: "Icomoon Icon";
+  .bottom-button-wrapper{
+    text-align: center;
+    a.btn{
+      display: inline-block;
+      margin: 0 auto;
+      span.right{
+        &:after{
+          margin-left: 5px;
+          content: "\e912";
+          font-family: "Icomoon Icon";
+        }
       }
     }
   }

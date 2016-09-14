@@ -5,39 +5,60 @@ require('./IntlIndex.scss');
 class IntlIndex extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {columns: null}
     }
 
+
     render() {
-        var columns = [
-                <div className="panel">
-                    <div className="panel-body">
-                        <h4>{this.props.intl.formatMessage({id:'platform.user.title'})}</h4>
-                        <button className="btn btn-primary">
-                            {this.props.intl.formatMessage({id:'platform.enter'})}<span className="right"></span>
-                        </button>
-                    </div>
-                </div>,
-                <div className="panel">
-                    <div className="panel-body">
-                        <h4>{this.props.intl.formatMessage({id:'platform.cms.title'})}</h4>
-                        <button className="btn btn-primary">
-                            {this.props.intl.formatMessage({id:'platform.enter'})}<span className="right"></span>
-                        </button>
-                    </div>
-                </div>,
-                <div className="panel">
-                    <div className="panel-body">
-                        <h4>{this.props.intl.formatMessage({id:'platform.crm.title'})}</h4>
-                        <button className="btn btn-primary">
-                            {this.props.intl.formatMessage({id:'platform.enter'})}<span className="right"></span>
-                        </button>
-                    </div>
-                </div>,
-            ]
-            ;
+        fetch("http://localhost:8080/navigate/platform", {
+            method: 'GET'
+        }).then(response => response.text().then(function (text) {
+                if (text) {
+                    var json = JSON.parse(text);
+                    return {json, response}
+                } else {
+                    return {response}
+                }
+            }
+        )).then(({json, response}) => {
+            if (!response.ok) {
+                return Promise.reject(json)
+            }
+            if (json) {
+                return json
+            } else {
+                return null;
+            }
+        }).then(response => {
+            var columns = [];
+            if (response && response.length) {
+                for (var i = 0; i < response.length; i++) {
+                    var title = null;
+                    if (response[i].name == "userPlatform") {
+                        title = this.props.intl.formatMessage({id: 'platform.user.title'});
+                    } else if (response[i].name == "cmsPlatform") {
+                        title = this.props.intl.formatMessage({id: 'platform.cms.title'});
+                    } else if (response[i].name == "crmPlatform") {
+                        title = this.props.intl.formatMessage({id: 'platform.crm.title'});
+                    }
+                    columns[i] = (<div className="panel">
+                        <div className="panel-body">
+                            <h4>{title}</h4>
+                            <div className="bottom-button-wrapper">
+                                <a className="btn btn-primary" href={response[i].url}>
+                                    {this.props.intl.formatMessage({id: 'platform.enter'})}<span
+                                    className="right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>)
+                }
+                this.setState({columns: columns});
+            }
+        });
         return (
             <div className="index-block">
-                <Layout.Columns3 columnValues={columns}/>
+                {this.state.columns ? <Layout.Columns3 columnValues={this.state.columns}/> : null}
             </div>
         );
     }
