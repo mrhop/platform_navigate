@@ -8,6 +8,7 @@ let utilFun = function () {
     locale = locale[1] ? '${locale[0]}-${locale[1].toUpperCase()}' : navigator.language;
     global.locale = intl[locale] ? locale : initial.locale;
     global.globalProps = intl[global.locale]['app'];
+    global.baseUrl = initial.baseUrl;
 };
 utilFun.prototype = {
     name: 'utilFun',

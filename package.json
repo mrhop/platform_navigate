@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --colors",
+    "build-dev": "set NODE_ENV=development&& webpack -d",
     "build": "set NODE_ENV=production&& webpack -p",
     "start": "node server.js"
   },

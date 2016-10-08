@@ -7,10 +7,8 @@ class IntlIndex extends React.Component {
         super(props);
         this.state = {columns: null}
     }
-
-
-    render() {
-        fetch("http://localhost:8080/navigate/platform", {
+    componentDidMount(){
+        fetch(baseUrl ? (baseUrl + "platform") : "platform", {
             method: 'GET'
         }).then(response => response.text().then(function (text) {
                 if (text) {
@@ -56,6 +54,8 @@ class IntlIndex extends React.Component {
                 this.setState({columns: columns});
             }
         });
+    }
+    render() {
         return (
             <div className="index-block">
                 {this.state.columns ? <Layout.Columns3 columnValues={this.state.columns}/> : null}

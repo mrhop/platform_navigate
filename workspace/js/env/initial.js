@@ -16,7 +16,19 @@ if (navigator.browserLanguage) {
         //localeLanguage = navigator.language
     }
 }
+var name = "baseurl=";
+var baseUrl = null
+var ca = document.cookie.split(';');
+for (var i = 0; i < ca.length; i++) {
+    var c = ca[i].trim();
+    if (c.indexOf(name) == 0) {
+        baseUrl = c.substring(name.length, c.length);
+        break;
+    }
+}
 module.exports = {
     //locale:'en-US'
-    locale: localeLanguage
+    //locale:'zh-CN'
+    locale: localeLanguage,
+    baseUrl: baseUrl
 }
