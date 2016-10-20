@@ -1,0 +1,40 @@
+/**
+ * Created by Donghui Huo on 2016/5/6.
+ */
+@import "../../../../bower_components/compass-sass-mixins/lib/compass/support";
+@import "../../../../bower_components/compass-sass-mixins/lib/compass/css3";
+html#page-404 {
+  height: 100%;
+  body {
+    @include display-flex(flex);
+    @include align-items(center);
+    width: 100%;
+    margin: auto;
+    height: 100%;
+  }
+}
+
+.page-not-found-modal {
+  width: 638px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 5px;
+  font-weight: 300;
+  color: #fff;
+  padding: 32px;
+  text-align: center;
+  box-sizing: content-box;
+  h1 {
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  a {
+    text-decoration: none;
+    outline: 0;
+    display: inline-block;
+  }
+}

@@ -127,7 +127,7 @@ module.exports = {
             allChunks: true
         }),
         new CopyWebpackPlugin(
-            [{from: 'html/**/*'},
+            [{from: 'error/**/*'},
                 {from: '*.html'}, {from: 'demoData/**/*'}]
         ),
         new webpack.DefinePlugin({
