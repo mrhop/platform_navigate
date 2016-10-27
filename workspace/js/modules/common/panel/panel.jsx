@@ -9,9 +9,15 @@ class DefaultPanel extends React.Component {
         super(props);
         this.state = {panelActionCallBack: {}};
         this.childrenWithProps = React.Children.map(this.props.children,
-            (child) => React.cloneElement(child, {
-                panelActionCallBack: this.state.panelActionCallBack
-            })
+            (child) => {
+                if (child.type == "button" || child.type == "div") {
+                    return child
+                } else {
+                    return React.cloneElement(child, {
+                        panelActionCallBack: this.state.panelActionCallBack
+                    })
+                }
+            }
         );
     }
 
@@ -25,9 +31,9 @@ class DefaultPanel extends React.Component {
                 <div className="panel-body">
                     {this.childrenWithProps}
                 </div>
-    </div>
-    )
-        ;
+            </div>
+        )
+            ;
     }
 }
 
@@ -41,7 +47,8 @@ class PanelWithHeader extends DefaultPanel {
 
     render() {
         return (
-            <div className="panel" ref={(ref) => this.panelDom = ref} onClick={this.state.panelActionCallBack.clickEvent}>
+            <div className="panel" ref={(ref) => this.panelDom = ref}
+                 onClick={this.state.panelActionCallBack.clickEvent}>
                 <div className="panel-heading">
                     <h3 className="panel-title">{this.props.panelValues.title}</h3>
                 </div>

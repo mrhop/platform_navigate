@@ -8,7 +8,7 @@ class IntlIndex extends React.Component {
         this.state = {columns: null}
     }
     componentDidMount(){
-        fetch(baseUrl ? (baseUrl + "platform") : "platform", {
+        fetch(endpoints.platform, {
             method: 'GET'
         }).then(response => response.text().then(function (text) {
                 if (text) {

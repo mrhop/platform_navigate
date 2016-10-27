@@ -17,7 +17,7 @@ if (navigator.browserLanguage) {
     }
 }
 var name = "baseurl=";
-var baseUrl = null
+var baseUrl = "/"
 var ca = document.cookie.split(';');
 for (var i = 0; i < ca.length; i++) {
     var c = ca[i].trim();
@@ -30,5 +30,8 @@ module.exports = {
     //locale:'en-US'
     //locale:'zh-CN'
     locale: localeLanguage,
-    baseUrl: baseUrl
+    baseUrl: baseUrl,
+    endpoints: {
+        platform: baseUrl + 'platform'
+    }
 }
